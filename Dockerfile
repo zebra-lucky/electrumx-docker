@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTAINER followtheart "followtheart@outlook.com"
 
 RUN mkdir -p /data/log /data/db /data/env

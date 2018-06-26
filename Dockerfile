@@ -22,7 +22,7 @@ RUN apt-get update \
     && groupadd -r electrumx \
     && useradd -s /bin/bash -m -g electrumx electrumx \
     && cd /home/electrumx \
-    && git clone --branch 1.4.3 https://github.com/kyuupichan/electrumx \
+    && git clone --branch master https://github.com/kyuupichan/electrumx \
     && chown -R electrumx:electrumx electrumx && cd electrumx \
     && chown -R electrumx:electrumx /data/ \
     && python3.6 setup.py install \
@@ -32,7 +32,7 @@ USER electrumx
 
 VOLUME /data
 
-EXPOSE 8000 50001 50002 51001 51002
+EXPOSE 8000 50001 50002
 
 RUN cd ~ \
     && mkdir -p ~/service ~/scripts/electrumx \

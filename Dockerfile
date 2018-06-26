@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTAINER followtheart "followtheart@outlook.com"
 
 RUN mkdir -p /data/log /data/db /data/env
@@ -22,7 +22,7 @@ RUN apt-get update \
     && groupadd -r electrumx \
     && useradd -s /bin/bash -m -g electrumx electrumx \
     && cd /home/electrumx \
-    && git clone --branch 1.3 https://github.com/zebra-lucky/electrumx \
+    && git clone --branch 1.4.3 https://github.com/kyuupichan/electrumx \
     && chown -R electrumx:electrumx electrumx && cd electrumx \
     && chown -R electrumx:electrumx /data/ \
     && python3.6 setup.py install \

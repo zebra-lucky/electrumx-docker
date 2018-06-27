@@ -32,7 +32,7 @@ USER electrumx
 
 VOLUME /data
 
-EXPOSE 8000 50001 50002
+EXPOSE 50002
 
 RUN cd ~ \
     && mkdir -p ~/service ~/scripts/electrumx \

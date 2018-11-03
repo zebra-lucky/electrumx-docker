@@ -22,7 +22,7 @@ RUN apt-get update \
     && groupadd -r electrumx \
     && useradd -s /bin/bash -m -g electrumx electrumx \
     && cd /home/electrumx \
-    && git clone --branch TxV3 https://github.com/zebra-lucky/electrumx \
+    && git clone --branch 1.8.8 https://github.com/kyuupichan/electrumx \
     && chown -R electrumx:electrumx electrumx && cd electrumx \
     && chown -R electrumx:electrumx /data/ \
     && python3.6 setup.py install \
@@ -43,7 +43,7 @@ RUN cd ~ \
     && sed -i '$a\exec multilog t s500000 n10 /data/log' ~/scripts/electrumx/log/run
 
 RUN cp /data/env/* /home/electrumx/scripts/electrumx/env/ \
-    && cat ~/scripts/electrumx/env/coins.py >> ~/electrumx/lib/coins.py \
+    && cat ~/scripts/electrumx/env/coins.py >> ~/electrumx/electrumx/lib/coins.py \
     && ln -s ~/scripts/electrumx  ~/service/electrumx
 
 WORKDIR /home/electrumx

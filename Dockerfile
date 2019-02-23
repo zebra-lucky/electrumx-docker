@@ -22,7 +22,7 @@ RUN apt-get update \
     && groupadd -r electrumx \
     && useradd -s /bin/bash -m -g electrumx electrumx \
     && cd /home/electrumx \
-    && git clone --branch 1.9.1 https://github.com/kyuupichan/electrumx \
+    && git clone --branch 1.9.5 https://github.com/kyuupichan/electrumx \
     && chown -R electrumx:electrumx electrumx && cd electrumx \
     && chown -R electrumx:electrumx /data/ \
     && python3.6 setup.py install \
